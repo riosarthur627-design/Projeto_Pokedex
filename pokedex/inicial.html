@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Pokédex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body{
+       background: radial-gradient(circle at 45% 35%, rgba(0, 119, 182, 0.15), transparent 35%), linear-gradient(135deg, #020b14, #061523, #020a12); 
+    }
+
+
+    body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #020b14;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+body.transicionando::after {
+    animation: cobrirTela 3s ease-in-out forwards;
+}
+
+@keyframes cobrirTela {
+
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100vh;
+    }
+}
+
+
+    main{
+        background: radial-gradient(circle at 45% 35%, rgba(0, 119, 182, 0.15), transparent 35%), linear-gradient(135deg, #020b14, #061523, #020a12);
+    }
+
+    .area-pokebola{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 90px;
+        text-align: center;
+    }
+
+    .texto-inicial{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .texto-inicial h1{
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .texto-inicial h1:before,
+    .texto-inicial h1::after{
+        content: "";
+        width: 200px;
+        height: 2px;
+        background-color: red;
+        box-shadow: 0 0 5px red, 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .texto-inicial h2{
+        font-size: 80px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+    }
+
+    .texto-inicial h2 span{
+        color: red;
+    }
+
+    .pokebola-pequena{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pokebola-pequena img{
+        width: 50px;
+    }
+
+    .pokebola-pequena:before,
+    .pokebola-pequena:after{
+        content: "";
+        height: 1.5px;
+        width: 100px;
+        background-color: red;
+        box-shadow: 0 0 20px red;
+        
+    }
+
+    .botao-pokebola{
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+    }
+
+    .botao-pokebola img{
+        margin-top: -40px;
+        width: 600px;
+        position: relative;
+        z-index: 2;
+        transition: 0.3s;
+        filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.6));
+    }
+
+    .botao-pokebola:hover img {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 20px red);
+    }
+
+    .botao-pokebola::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    box-shadow:0 0 30px rgba(255, 0, 0, 0.7), 0 0 60px rgba(255, 0, 0, 0.4), 0 0 95px rgba(255, 0, 0, 0.2);
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+.setas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    color: white;
+}
+
+.setas i {
+    color: #ff2020;
+    font-size: 22px;
+    text-shadow: 0 0 5px red, 0 0 12px red;
+}
+
+.setas i:nth-child(1) {
+    opacity: 1.5;
+}
+
+.setas i:nth-child(2) {
+    opacity: 1;
+}
+
+.setas i:nth-child(3) {
+    opacity: 0.6;
+}
+
+
+.clicar-pokebola {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 70px;
+    margin: 30px auto 0;
+    background-color: transparent;
+    color: white;
+    border: 1px solid red;
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 50px rgba(255, 0, 0, 0.4), 0 0 90px rgba(255, 0, 0, 0.2);
+}
+
+.clicar-pokebola h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    font-size: 27px;
+    letter-spacing: 5px;
+
+}
+
+.para-comecar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    color: #aeb7c5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.para-comecar img {
+    width: 35px;
+    filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.6));
+}
+
+
+
+.botao-pokebola.abrindo {
+    animation: abrirPokedex 3s ease-in-out forwards;
+}
+
+@keyframes abrirPokedex {
+
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    15% {
+        transform: rotate(-10deg) scale(1);
+    }
+
+    30% {
+        transform: rotate(10deg) scale(1);
+    }
+
+    45% {
+        transform: rotate(-10deg) scale(1);
+    }
+
+    60% {
+        transform: rotate(10deg) scale(1.05);
+    }
+
+    75% {
+        transform: rotate(0deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(2);
+        opacity: 0;
+    }
+}
+
+
+.scanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff1a1a;
+    box-shadow: 0 0 10px red, 0 0 25px red, 0 0 45px rgba(255, 0, 0, 0.8);
+    opacity: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.scanner.ativo {
+    animation: escanear 3s ease-in-out forwards;
+}
+
+@keyframes escanear {
+
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+    
+    <main>
+        <div class="area-pokebola">
+
+            <div class="texto-inicial">
+                <h1>BEM-VINDO À</h1>
+                <h2>POKÉ<span>DEX</span></h2>
+
+                <div class="pokebola-pequena">
+                    <img src="imagens/logo.png" alt="Entrar na Pokedex">
+                </div>
+            </div>
+
+            <button class="botao-pokebola" id="entrar-pokedex">
+                <img src="imagens/logo.png" alt="Entrar na Pokédex">
+            </button>
+
+        </div>
+
+         <div class="setas">
+            <i class="fa-solid fa-chevron-up"></i>
+            <i class="fa-solid fa-chevron-up"></i>
+            <i class="fa-solid fa-chevron-up"></i>
+        </div>
+
+            <div class="clicar-pokebola">
+                <h1>CLIQUE NA POKÉBOLA</h1>
+            </div>
+
+        <div class="para-comecar">
+            <img src="imagens/logo.png" alt="">
+            <p>PARA COMEÇAR</p>
+            <img src="imagens/logo.png" alt="">
+        </div>
+
+    </main>
+
+    <div class="scanner"></div>
+    <script src="transicao.js"></script>
+
+
+</body>
+</html>
