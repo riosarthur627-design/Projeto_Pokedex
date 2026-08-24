@@ -15,7 +15,10 @@ main{
 
 header {
     background: linear-gradient(90deg, #b31212, #8f0b0b, #a50d0d);
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
 }
 
 .conteudo-header img{
@@ -41,10 +44,12 @@ header {
 .options{
     position: absolute;
     display: flex;
-    left: 42%;
+    left: 38%;
     background-color: #5a0b04;
     border-radius: 80px;
     border: 2px solid red;
+    box-shadow: 0 0 15px #cf1b26;
+    transition: 0.3s;
 }
 
 .options a{
@@ -52,17 +57,64 @@ header {
     text-decoration: none;
     font-size: 23px;
     margin: 30px;
+    transition: 0.3s;
+}
+
+.options a:hover{
+    transform: scale(1.08);
+}
+
+.options:hover{
+    transform: scale(1.06);
+    box-shadow: 0 0 40px  #cf1b26;
+}
+
+.pesquisar-pokemon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 100px;
+    width: 450px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, rgba(4, 20, 32, 0.95), rgba(2, 10, 18, 0.95));
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.45);
+    transition: 0.3s;
+}
+
+.pesquisar-pokemon:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.45);
 }
 
 
+.pesquisar-pokemon input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.pesquisa input::placeholder {
+    color: #7f8794;
+}
+
+.pesquisar-pokemon i{
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+}
 
 .conteudo-main{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 90px;
     gap: 25px;
-    padding: 0 0 0 100px;
+    padding: 40px 0 0 100px;
 }
 
 .conteudo-main h1{
@@ -84,37 +136,157 @@ header {
     font-size: 21px;
 }
 
-.pesquisa{
+
+.pokemon-dia {
     position: absolute;
+    top: 20px;
+    right: 60px;
+    width: 600px;
+    padding: 20px;
+    background: linear-gradient(145deg, rgba(4, 20, 32, 0.95), rgba(2, 10, 18, 0.95));
+    border: 2px solid deepskyblue;
+    border-radius: 20px;
+    box-shadow: 0 0 15px blue;
+    transition: 0.3s;
+}
+
+.pokemon-dia:hover{
+    transform: scale(1.05);
+}
+
+.pokemon-dia-titulo {
     display: flex;
     align-items: center;
-    left: 72%;
-    width: 450px;
-    outline: none;
-    border: 2px solid deepskyblue;
-    border-radius: 15px;
-    box-shadow: 0 0 12px rgba(0, 170, 255, 0.5);
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
-.pesquisa input{
-    width: 100%;
+.pokemon-dia-titulo img {
+    width: 45px;
+}
+
+.pokemon-dia-titulo h2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.pokemon-dia-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.pokemon-dia-imagem {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 191, 255, 0.3);
+}
+
+.pokemon-dia-imagem img {
+    width: 200px;
+    transition: 0.3s;
+}
+
+.pokemon-dia-imagem img:hover {
+    transform: scale(1.08);
+}
+
+.pokemon-dia-info {
+    flex: 1;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pokemon-dia-info h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.pokemon-dia-tipo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 7px 15px;
+    color: white;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.numero-dia {
+    display: block;
+    color: #aeb7c5;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.pokemon-dia-dados {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.pokemon-dia-dados p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d7dde5;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.pokemon-dia-dados i {
+    color: deepskyblue;
+    font-size: 16px;
+}
+
+.pokemon-dia-detalhes {
+    padding: 10px 20px;
     background-color: transparent;
-    outline: none;
     color: white;
-    height: 60px;
-    padding-left: 25px;
-    border: none;
-    font-size: 17px;
+    border: 1px solid deepskyblue;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.pesquisa i{
-    color: white;
-    padding-left: 15px;
-    font-size: 25px;
+.pokemon-dia-detalhes i {
+    margin-left: 7px;
+    transition: 0.3s;
 }
+
+.pokemon-dia-detalhes:hover {
+    background-color: rgba(0, 191, 255, 0.1);
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.pokemon-dia-detalhes:hover i {
+    transform: translateX(5px);
+}
+
 
 .todos img{
     width: 70px;
+    margin-bottom: -100px;
+    margin-top: 10px;
 }
 
 .todos{
@@ -122,13 +294,15 @@ header {
     flex-direction: row;
     gap: 8px;
     align-items: center;
-    padding: 90px 0 0 80px;
+    padding: 150px 0 0 80px;
 }
 
 .todos h2{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: -100px;
 }
 
 .pokemon-card{
