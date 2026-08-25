@@ -41,10 +41,11 @@ header {
     font-weight: bold;
 }
 
-.options{
+.options {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    left: 38%;
     background-color: #5a0b04;
     border-radius: 80px;
     border: 2px solid red;
@@ -65,7 +66,8 @@ header {
 }
 
 .options:hover{
-    transform: scale(1.06);
+    transform: translateX(-50%) scale(1.06);
+    box-shadow: 0 0 40px #cf1b26;
     box-shadow: 0 0 40px  #cf1b26;
 }
 
@@ -308,7 +310,7 @@ header {
 .pokemon-card{
     margin-top: 100px;
     position: relative;
-    width: 340px;
+    width: 100%;
     background: linear-gradient(145deg, #102c19, #07160d);
     padding: 25px;
     overflow: hidden;
@@ -557,11 +559,13 @@ header {
 
 .lista-pokemons {
     display: grid;
-    grid-template-columns: repeat(5, 340px);
-    column-gap: 25px;
-    row-gap: -10px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+    gap: 25px;
     justify-content: center;
+    padding: 0 40px;
+    width: 100%;
 }
+
 
 
 .pokemon-card.planta {
@@ -725,4 +729,99 @@ header {
     color: #020b14;
     border-color: #00bfff;
     box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+
+@media (max-width: 1500px) {
+
+
+    .pokemon-imagem {
+        height: 240px;
+    }
+
+    .pokemon-imagem img {
+        width: 200px;
+    }
+
+    .pokemon-imagem::before {
+        width: 220px;
+        height: 220px;
+    }
+
+    .pokemon-dia {
+        width: 520px;
+        right: 30px;
+    }
+
+    .pokemon-dia-imagem {
+        width: 190px;
+        height: 190px;
+    }
+
+    .pokemon-dia-imagem img {
+        width: 170px;
+    }
+
+    .pesquisar-pokemon {
+        width: 350px;
+        right: 30px;
+    }
+
+    .conteudo-header img {
+        width: 150px;
+    }
+
+    .conteudo-header h1 {
+        font-size: 38px;
+    }
+
+    .options a {
+        font-size: 18px;
+        margin: 22px;
+    }
+
+    .pesquisar-pokemon {
+        width: 350px;
+        right: 30px;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+
+
+    .pokemon-dia {
+        position: static;
+        width: 85%;
+        margin: 40px auto;
+    }
+
+    .conteudo-main {
+        padding-left: 60px;
+    }
+
+    .p-conteudo-main {
+        margin-left: 60px;
+    }
+
+    .todos {
+        padding-left: 60px;
+        padding-top: 60px;
+    }
+
+    .conteudo-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .options {
+        position: static;
+        transform: none;
+    }
+
+    .pesquisar-pokemon {
+        position: static;
+        width: 350px;
+    }
 }
