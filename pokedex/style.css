@@ -307,7 +307,6 @@ header {
 
 .pokemon-card{
     margin-top: 100px;
-    
     position: relative;
     width: 340px;
     background: linear-gradient(145deg, #102c19, #07160d);
@@ -384,7 +383,7 @@ header {
     padding: 0 0 0 10px;
     display: block;
     color: #aeb7c5;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 4px;
 }
@@ -559,7 +558,8 @@ header {
 .lista-pokemons {
     display: grid;
     grid-template-columns: repeat(5, 340px);
-    gap: 20px;
+    column-gap: 25px;
+    row-gap: -10px;
     justify-content: center;
 }
 
@@ -670,4 +670,59 @@ header {
     background: linear-gradient(145deg, #442333, #1d0f16);
     border: 1px solid #d66b9f;
     box-shadow: 0 0 15px rgba(214, 107, 159, 0.3);
+}
+
+
+.paginacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+
+.seta-pagina{
+    padding: 16px;
+    background-color: #07111d;
+    border: 2px solid rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.seta-pagina:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(0, 191, 255, 0.5);
+}
+
+.numeros-pagina {
+    display: flex;
+    gap: 10px;
+}
+
+
+.numeros{
+    padding: 15px;
+    background-color: #07111d;
+    color: white;
+    font-size: 14px;
+    border-color: #00bfff;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.5);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.numeros:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+
+}
+
+.numeros.ativo{
+    background-color: #00bfff;
+    color: #020b14;
+    border-color: #00bfff;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
 }
