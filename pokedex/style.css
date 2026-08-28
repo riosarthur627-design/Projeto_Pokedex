@@ -54,6 +54,7 @@ header {
 }
 
 .options a{
+    border-bottom: 3px solid transparent;
     color: white;
     text-decoration: none;
     font-size: 23px;
@@ -63,6 +64,10 @@ header {
 
 .options a:hover{
     transform: scale(1.08);
+}
+
+.options a.ativo{
+    border-bottom-color: red; 
 }
 
 .options:hover{
@@ -824,4 +829,8 @@ header {
         position: static;
         width: 350px;
     }
+}
+
+.clicado{
+    color: red;
 }
