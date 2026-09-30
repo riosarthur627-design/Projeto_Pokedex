@@ -1,0 +1,763 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 45% 35%, rgba(0, 119, 182, 0.15), transparent 35%),
+        linear-gradient(135deg, #020b14, #061523, #020a12);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+}
+
+
+main {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 45% 35%, rgba(0, 119, 182, 0.15), transparent 35%),
+        linear-gradient(135deg, #020b14, #061523, #020a12);
+}
+
+
+.area-inicial{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+
+.lado-pokedex{
+    width: 55%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.conteudo-primario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.texto-inicial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.texto-inicial h1{
+    font-size: 65px;
+    font-weight: 900;
+}
+
+
+.texto-inicial h1 span{
+    color: red;
+}
+
+
+.texto-inicial p{
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 6px;
+}
+
+
+.pokebola-menor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.pokebola-menor img{
+    width: 60px;
+}
+
+
+.pokebola-menor::before,
+.pokebola-menor::after{
+    content: "";
+    height: 2px;
+    width: 180px;
+    background-color: red;
+    filter: drop-shadow(0 0 4px red);
+}
+
+
+.pokebola-menor::before{
+    background: linear-gradient(to left, red, transparent);
+    box-shadow: 0 0 20px red;
+}
+
+
+.pokebola-menor::after{
+    background: linear-gradient(to right, red, transparent);
+    box-shadow: 0 0 20px red;
+}
+
+
+.pokebola-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+
+.botao-pokebola{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.botao-pokebola img{
+    width: 420px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px red);
+    transition: 0.5s;
+}
+
+
+.botao-pokebola img:hover{
+    transform: scale(1.08);
+}
+
+
+.botao-pokebola::before{
+    content: "";
+    position: absolute;
+    width: 315px;
+    height: 315px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: rgba(128, 15, 15, 0.6);
+    border: 2px solid rgb(255, 60, 60);
+    box-shadow: 0 0 50px red;
+    animation: pulsar 2s ease-in-out infinite;
+}
+
+
+@keyframes pulsar{
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+.setas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+
+.setas i{
+    color: red;
+    font-size: 20px;
+    text-shadow: 0 0 8px red, 0 0 15px red;
+    -webkit-text-stroke: 2px red;
+}
+
+
+.setas i + i{
+    margin-top: -7px;
+}
+
+
+.click-pokebola{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid red;
+    box-shadow: 0 0 15px red;
+    border-radius: 50px;
+}
+
+
+.click-pokebola h1{
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 19px;
+}
+
+
+.para-comecar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+
+.para-comecar img{
+    width: 32px;
+}
+
+
+.para-comecar p{
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #aeb7c5;
+}
+
+.area-conta{
+    width: 45%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 35px 60px 35px 30px;
+}
+
+.area-conta::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 75%;
+    background: linear-gradient(transparent, rgba(255, 0, 0, 0.5), transparent);
+}
+
+.card-conta{
+    width: 100%;
+    max-width: 480px;
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(6, 21, 35, 0.92), rgba(2, 10, 18, 0.96));
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.1), 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+
+
+.opcoes-conta {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #263747;
+}
+
+
+.opcoes-conta button {
+    flex: 1;
+    padding: 13px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #6f7c89;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.opcoes-conta button:hover {
+    color: white;
+}
+
+
+.opcoes-conta button.ativo {
+    color: #ff1e1e;
+    border-bottom-color: #ff1e1e;
+    text-shadow: 0 0 10px rgba(255, 30, 30, 0.4);
+}
+
+
+
+.titulo-formulario {
+    margin-bottom: 25px;
+}
+
+
+.titulo-formulario span {
+    color: #ff1e1e;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+.titulo-formulario h2 {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: 28px;
+}
+
+
+.titulo-formulario p {
+    color: #7d8996;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+
+.grupo-input {
+    margin-bottom: 16px;
+}
+
+
+.grupo-input label{
+    display: block;
+    margin-bottom: 7px;
+    color: #d4dbe3;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.input-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(1, 9, 16, 0.8);
+    border: 1px solid #253747;
+    border-radius: 11px;
+    transition: 0.3s;
+}
+
+
+.input-container:focus-within{
+    border-color: #ff1e1e;
+    box-shadow: 0 0 12px rgba(255, 30, 30, 0.25);
+}
+
+
+.input-container > i{
+    margin-left: 16px;
+    color: #647383;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+.input-container:focus-within > i{
+    color: #ff1e1e;
+}
+
+
+.input-container input{
+    width: 100%;
+    padding: 13px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+}
+
+
+.input-container input::placeholder {
+    color: #4f5e6c;
+}
+
+.mostrar-senha {
+    margin-right: 15px;
+    background: transparent;
+    border: none;
+    color: #647383;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.mostrar-senha:hover {
+    color: #ff1e1e;
+}
+
+
+.opcoes-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 22px;
+}
+
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.lembrar input,
+.termos input{
+    accent-color: #ff1e1e;
+    cursor: pointer;
+}
+
+
+.lembrar label,
+.termos label{
+    color: #7f8b97;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.esqueci-senha{
+    color: #ff3535;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+
+.esqueci-senha:hover{
+    text-decoration: underline;
+}
+
+
+.termos{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+
+
+.botao-conta{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: none;
+    border-radius: 11px;
+    background: linear-gradient(90deg, #b90000, #ff1919);
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+
+.botao-conta:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.55);
+}
+
+
+.botao-conta i {
+    transition: 0.3s;
+}
+
+
+.botao-conta:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   TROCAR CONTA
+========================================= */
+
+.trocar-conta {
+    margin-top: 22px;
+
+    text-align: center;
+
+    color: #768390;
+
+    font-size: 12px;
+}
+
+
+.trocar-conta button {
+    margin-left: 4px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ff3030;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.trocar-conta button:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   FORMULÁRIOS
+========================================= */
+
+.form-login {
+    display: block;
+}
+
+
+.form-cadastro {
+    display: none;
+}
+
+
+/* =========================================
+   SUA ANIMAÇÃO DA POKÉBOLA
+========================================= */
+
+.botao-pokebola.clicada img {
+    animation: clicarPokebola 4s ease-in-out forwards;
+}
+
+
+@keyframes clicarPokebola {
+
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    15% {
+        transform: scale(0.95) rotate(-8deg);
+    }
+
+    30% {
+        transform: scale(1.03) rotate(8deg);
+    }
+
+    45% {
+        transform: scale(1.3) rotate(-12deg);
+    }
+
+    60% {
+        transform: scale(1.5) rotate(12deg);
+    }
+
+    100% {
+        transform: scale(2) rotate(360deg);
+    }
+
+}
+
+
+.sumir {
+    animation: desaparecer 2.5s ease-in-out forwards;
+}
+
+
+@keyframes desaparecer {
+
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   CLARÃO
+========================================= */
+
+.clarao {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+
+
+.clarao.ativo {
+    animation: clarao 1.5s ease-in-out forwards;
+}
+
+
+@keyframes clarao {
+
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 250vw;
+        height: 250vw;
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .area-inicial {
+        flex-direction: column;
+    }
+
+
+    .lado-pokedex,
+    .area-conta {
+        width: 100%;
+    }
+
+
+    .lado-pokedex {
+        min-height: auto;
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+
+    .area-conta {
+        min-height: auto;
+
+        padding: 30px 30px 70px;
+    }
+
+
+    .area-conta::before {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .texto-inicial h1 {
+        font-size: 48px;
+    }
+
+
+    .texto-inicial p {
+        font-size: 16px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .pokebola-menor::before,
+    .pokebola-menor::after {
+        width: 100px;
+    }
+
+
+    .botao-pokebola img {
+        width: 300px;
+    }
+
+
+    .botao-pokebola::before {
+        width: 225px;
+        height: 225px;
+    }
+
+
+    .click-pokebola {
+        width: 90%;
+    }
+
+
+    .click-pokebola h1 {
+        font-size: 15px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .area-conta {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .card-conta {
+        padding: 28px 22px;
+    }
+
+}
