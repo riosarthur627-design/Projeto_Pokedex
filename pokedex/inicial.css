@@ -1,3 +1,6 @@
+/* CSS recuperado da página inicial da Pokédex */
+/* Estilos originais preservados; tela de sucesso e erros restaurados. */
+
 * {
     margin: 0;
     padding: 0;
@@ -222,26 +225,7 @@ main {
 }
 
 
-.para-comecar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    gap: 15px;
-}
 
-
-.para-comecar img{
-    width: 32px;
-}
-
-
-.para-comecar p{
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 5px;
-    color: #aeb7c5;
-}
 
 .area-conta{
     width: 45%;
@@ -502,9 +486,7 @@ main {
 }
 
 
-/* =========================================
-   TROCAR CONTA
-========================================= */
+/* ==================== TROCAR CONTA ==================== */
 
 .trocar-conta {
     margin-top: 22px;
@@ -537,9 +519,7 @@ main {
 }
 
 
-/* =========================================
-   FORMULÁRIOS
-========================================= */
+/* ==================== FORMULÁRIOS ==================== */
 
 .form-login {
     display: block;
@@ -551,9 +531,7 @@ main {
 }
 
 
-/* =========================================
-   SUA ANIMAÇÃO DA POKÉBOLA
-========================================= */
+/* ==================== SUA ANIMAÇÃO DA POKÉBOLA ==================== */
 
 .botao-pokebola.clicada img {
     animation: clicarPokebola 4s ease-in-out forwards;
@@ -615,9 +593,7 @@ main {
 }
 
 
-/* =========================================
-   CLARÃO
-========================================= */
+/* ==================== CLARÃO ==================== */
 
 .clarao {
     position: fixed;
@@ -668,9 +644,106 @@ main {
 }
 
 
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
+/* ==================== RESPONSIVIDADE ==================== */
+
+
+
+/* ==================== TELA DE SUCESSO ==================== */
+
+.login-sucesso {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+/* Ícone de confirmação */
+.icone-sucesso {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+.icone-sucesso i {
+    color: #ff2525;
+    font-size: 22px;
+}
+
+/* Texto de acesso liberado */
+.login-sucesso > span {
+    color: #ff3030;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.login-sucesso h2 {
+    color: white;
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.login-sucesso > p {
+    color: #7d8996;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Indicação para clicar na Pokébola */
+.instrucao-pokebola {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.instrucao-pokebola > i {
+    color: #ff3030;
+    font-size: 15px;
+    animation: apontarPokebola 1.5s ease-in-out infinite;
+}
+
+.instrucao-pokebola img {
+    width: 28px;
+    filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.5));
+}
+
+.instrucao-pokebola p {
+    color: #aeb7c5;
+    font-size: 12px;
+}
+
+/* Mensagens de validação */
+.erro-login,
+.erro-cadastro {
+    color: #ff4040;
+    font-size: 12px;
+    margin-bottom: 12px;
+    min-height: 15px;
+}
+
+/* Movimento da seta */
+@keyframes apontarPokebola {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(-5px);
+        opacity: 1;
+    }
+}
 
 @media (max-width: 1100px) {
 
