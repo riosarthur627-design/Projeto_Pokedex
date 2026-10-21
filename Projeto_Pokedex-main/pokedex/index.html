@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="conteudo-header">
+            <img src="imagens/logo.png" alt="logotipo">
+            <h1>POKÉDEX</h1>
+
+            <nav class="options">
+                <a href="">
+                    <i class="fa-solid fa-house"></i>
+                    Início
+                </a>
+
+                <a href="">
+                    <i class="fa-solid fa-heart"></i>
+                    Favoritos
+                </a>
+            </nav>
+
+            <div class="pesquisar-pokemon" id="pesquisar-pokemon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="campo-pesquisa" placeholder="Pesquisar Pokémon...">
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+
+        <div class="conteudo-main">
+            <h1>DESCUBRA SEU<br>PRÓXIMO <span>POKÉMON</h1>
+        </div>
+        <p class="p-conteudo-main">Explore, pesquise e escolha<br>seus favoritos!</p>
+
+
+
+        <div class="pokemon-dia">
+            <div class="pokemon-dia-titulo">
+                <img src="imagens/logo.png" alt="">
+                <h2>POKÉMON DO DIA</h2>
+            </div>
+
+            <div class="pokemon-dia-conteudo">
+
+                <div class="pokemon-dia-imagem">
+                    <img src="imagens/pikachu.png" alt="Pikachu">
+                </div>
+
+                <div class="pokemon-dia-info">
+                    <h2>Pikachu</h2>
+
+                    <span class="numero-dia">#025</span>
+
+                    <div class="pokemon-dia-tipo tipo-eletrico">
+                        <i class="fa-solid fa-bolt"></i>
+                        ELÉTRICO
+                    </div>
+
+                    <div class="pokemon-dia-dados">
+                        <p>
+                            <i class="fa-solid fa-ruler-vertical"></i>
+                             Altura: 0,4 m
+                        </p>
+
+                         <p>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                             Peso: 6,0 kg
+                        </p>
+                    </div>
+
+                    <button class="pokemon-dia-detalhes">
+                        Ver detalhes
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="todos">
+            <img src="imagens/logo.png" alt="">
+            <h2>TODOS OS POKÉMONS</h2>
+        </div>
+
+        <div class="lista-pokemons">
+            
+            <article class="pokemon-card"> 
+
+                <button class="favorito">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <div class="pokemon-imagem">
+                    
+                </div>
+
+                <div class="pokemon-info">
+
+                    <span class="numero">
+                       
+                    </span>
+
+                    <h3></h3>
+
+                    <div class="tipos"></div>
+
+                <button class="ver-detalhes">
+                    Ver detalhes
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                </div>
+
+            </article>
+        </div>
+
+        
+
+        <div class="paginacao">
+            
+            <button class="seta-pagina">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="numeros-pagina"></div>
+
+             <button class="seta-pagina">
+                 <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+
+
+
+        
+<!-- ==================== DETALHES DO POKÉMON ==================== -->
+
+<div class="modal-detalhes" id="modal-detalhes">
+
+    <section class="card-detalhes" role="dialog" aria-modal="true" aria-labelledby="nome-detalhes">
+
+        <!-- Fechar modal -->
+        <button type="button" class="fechar-detalhes" aria-label="Fechar detalhes">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Lado esquerdo: imagem -->
+        <div class="visual-detalhes">
+
+            <div class="moldura-pokemon">
+
+                <div class="efeito-fundo"></div>
+
+                <img
+                    id="imagem-detalhes"
+                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+                    alt="Imagem do Pokémon"
+                >
+
+                <div class="plataforma-pokemon"></div>
+
+            </div>
+
+        </div>
+
+        <!-- Lado direito: informações -->
+        <div class="conteudo-detalhes">
+
+            <div class="identificacao-detalhes">
+
+                <span id="numero-detalhes">#0006</span>
+
+                <div class="titulo-pokemon-detalhes">
+
+                    <h2 id="nome-detalhes">Charizard</h2>
+
+                    <button type="button" class="favoritar-detalhes" aria-label="Favoritar Pokémon">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                </div>
+
+                <!-- Tipos -->
+                <div id="tipos-detalhes">
+
+                    <span class="tipo-detalhes tipo-fogo">
+                        <i class="fa-solid fa-fire"></i>
+                        Fogo
+                    </span>
+
+                    <span class="tipo-detalhes tipo-voador">
+                        <i class="fa-solid fa-feather"></i>
+                        Voador
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- Descrição -->
+            <div class="descricao-detalhes">
+
+                <p id="descricao-pokemon">
+                    Charizard é um Pokémon do tipo Fogo e Voador.
+                    Ele expele chamas intensas que podem derreter rochas.
+                    Quanto mais ferozes são suas batalhas, mais forte se torna.
+                </p>
+
+            </div>
+
+            <div class="divisor-detalhes"></div>
+
+            <!-- Informações gerais -->
+            <div class="informacoes-detalhes">
+
+                <div class="info-detalhes">
+
+                    <i class="fa-solid fa-ruler-vertical"></i>
+
+                    <div>
+                        <span>ALTURA</span>
+                        <strong id="altura-detalhes">1,7 m</strong>
+                    </div>
+
+                </div>
+
+                <div class="info-detalhes">
+
+                    <i class="fa-solid fa-weight-hanging"></i>
+
+                    <div>
+                        <span>PESO</span>
+                        <strong id="peso-detalhes">90,5 kg</strong>
+                    </div>
+
+                </div>
+
+                <div class="info-detalhes">
+
+                    <i class="fa-regular fa-star"></i>
+
+                    <div>
+                        <span>HABILIDADE</span>
+                        <strong id="habilidade-detalhes">Blaze</strong>
+                    </div>
+
+                </div>
+
+                <div class="info-detalhes">
+
+                    <i class="fa-solid fa-medal"></i>
+
+                    <div>
+                        <span>EXPERIÊNCIA BASE</span>
+                        <strong id="experiencia-detalhes">240</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="estatisticas-detalhes">
+
+                <h3>ESTATÍSTICAS BASE</h3>
+
+                <div class="linha-stat">
+                    <span>HP</span>
+                    <div class="barra-stat">
+                        <div id="barra-hp" class="progresso-stat" style="width: 52%;"></div>
+                    </div>
+                    <strong id="valor-hp">78</strong>
+                </div>
+
+                <div class="linha-stat">
+                    <span>Ataque</span>
+                    <div class="barra-stat">
+                        <div id="barra-ataque" class="progresso-stat" style="width: 56%;"></div>
+                    </div>
+                    <strong id="valor-ataque">84</strong>
+                </div>
+
+                <div class="linha-stat">
+                    <span>Defesa</span>
+                    <div class="barra-stat">
+                        <div id="barra-defesa" class="progresso-stat" style="width: 52%;"></div>
+                    </div>
+                    <strong id="valor-defesa">78</strong>
+                </div>
+
+                <div class="linha-stat">
+                    <span>At. Especial</span>
+                    <div class="barra-stat">
+                        <div id="barra-ataque-especial" class="progresso-stat" style="width: 73%;"></div>
+                    </div>
+                    <strong id="valor-ataque-especial">109</strong>
+                </div>
+
+                <div class="linha-stat">
+                    <span>Def. Especial</span>
+                    <div class="barra-stat">
+                        <div id="barra-defesa-especial" class="progresso-stat" style="width: 57%;"></div>
+                    </div>
+                    <strong id="valor-defesa-especial">85</strong>
+                </div>
+
+                <div class="linha-stat">
+                    <span>Velocidade</span>
+                    <div class="barra-stat">
+                        <div id="barra-velocidade" class="progresso-stat" style="width: 67%;"></div>
+                    </div>
+                    <strong id="valor-velocidade">100</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+
+    </main>
+    
+    <script src="script.js"></script>
+    <script src="cardApi.js"></script>
+
+</body>
+</html>

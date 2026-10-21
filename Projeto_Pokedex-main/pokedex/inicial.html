@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Inicial</title>
+
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS da página -->
+    <link rel="stylesheet" href="inicial.css">
+</head>
+
+<body>
+
+    <main>
+
+        <div class="area-inicial">
+
+
+            <!-- ==================== ÁREA DA POKÉDEX ==================== -->
+
+            <section class="lado-pokedex">
+
+                <!-- Título da página -->
+                <section class="conteudo-primario">
+
+                    <div class="texto-inicial">
+
+                        <p>BEM-VINDO À</p>
+
+                        <h1>POKÉ<span>DEX</span></h1>
+
+                        <div class="pokebola-menor">
+                            <img src="imagens/logo.png" alt="Pokébola">
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Pokébola responsável pela entrada na Pokédex -->
+                <div class="pokebola-principal">
+
+                    <button type="button" class="botao-pokebola" id="entrar-pokedex">
+                        <img src="imagens/logo.png" alt="Entrar na Pokédex">
+                    </button>
+
+                </div>
+
+
+                <!-- Setas de indicação -->
+                <div class="setas">
+
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-up"></i>
+
+                </div>
+
+
+                <!-- Indicação para clicar na Pokébola -->
+                <div class="click-pokebola">
+                    <h1>CLIQUE NA POKÉBOLA</h1>
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================== ÁREA DA CONTA ==================== -->
+
+            <section class="area-conta">
+
+                <div class="card-conta">
+
+
+                    <!-- Alterna entre login e cadastro -->
+                    <div class="opcoes-conta">
+
+                        <button type="button" class="opcao-login ativo">
+                            Entrar
+                        </button>
+
+                        <button type="button" class="opcao-cadastro">
+                            Criar conta
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ==================== LOGIN ==================== -->
+
+                    <!-- ==================== LOGIN ==================== -->
+                    <form class="form-login">
+
+                        <div class="titulo-formulario">
+                            <span>BEM-VINDO DE VOLTA</span>
+                            <h2>Entre na sua conta</h2>
+                            <p>Digite seu nome de usuário para continuar sua jornada.</p>
+                        </div>
+
+                        <!-- Nome de usuário -->
+                        <div class="grupo-input">
+                            <label for="username-login">Nome de usuário</label>
+
+                            <div class="input-container">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="username-login" placeholder="Digite seu username" required>
+                            </div>
+                        </div>
+
+                        <!-- Mensagem de erro -->
+                        <p class="erro-login"></p>
+
+                        <!-- Botão de login -->
+                        <button type="submit" class="botao-conta entrar-conta">
+                            ENTRAR
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <!-- Link para cadastro -->
+                        <p class="trocar-conta">
+                            Ainda não possui uma conta?
+                            <button type="button" class="ir-cadastro">Criar conta</button>
+                        </p>
+
+                    </form>
+
+
+
+                    <!-- ==================== CADASTRO ==================== -->
+                    <form class="form-cadastro">
+
+                        <div class="titulo-formulario">
+                            <span>COMECE SUA JORNADA</span>
+                            <h2>Crie sua conta</h2>
+                            <p>Cadastre-se para começar sua jornada Pokémon.</p>
+                        </div>
+
+                        <!-- Nome -->
+                        <div class="grupo-input">
+                            <label for="nome">Nome</label>
+
+                            <div class="input-container">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                            </div>
+                        </div>
+
+                        <!-- Sobrenome -->
+                        <div class="grupo-input">
+                            <label for="sobrenome">Sobrenome</label>
+
+                            <div class="input-container">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                            </div>
+                        </div>
+
+                        <!-- Username -->
+                        <div class="grupo-input">
+                            <label for="username-cadastro">Nome de usuário</label>
+
+                            <div class="input-container">
+                                <i class="fa-solid fa-at"></i>
+                                <input type="text" id="username-cadastro" placeholder="Crie seu username" required>
+                            </div>
+                        </div>
+
+                        <!-- Data de nascimento -->
+                        <div class="grupo-input">
+                            <label for="data-nascimento">Data de nascimento</label>
+
+                            <div class="input-container">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="date" id="data-nascimento" required>
+                            </div>
+                        </div>
+
+                        <!-- Mensagem de erro -->
+                        <p class="erro-cadastro"></p>
+
+                        <!-- Botão de cadastro -->
+                        <button type="submit" class="botao-conta criar-conta">
+                            CRIAR CONTA
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <!-- Link para login -->
+                        <p class="trocar-conta">
+                            Já possui uma conta?
+                            <button type="button" class="ir-login">Entrar</button>
+                        </p>
+
+                    </form>
+                </div>
+
+                <!-- ==================== AUTENTICAÇÃO CONCLUÍDA ==================== -->
+
+                <div class="login-sucesso">
+
+                    <!-- Ícone de confirmação -->
+                    <div class="icone-sucesso">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+
+                    <span>ACESSO LIBERADO</span>
+
+
+                    <!-- Nome inserido pelo JavaScript -->
+                    <h2>Bem-vindo, <span class="nome-usuario"></span>!</h2>
+
+
+                    <!-- Mensagem definida pelo JavaScript -->
+                    <p class="mensagem-sucesso"></p>
+
+
+                    <!-- Indica que a Pokébola está liberada -->
+                    <div class="instrucao-pokebola">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        <img src="imagens/logo.png" alt="Pokébola">
+
+                        <p>Clique na Pokébola para começar</p>
+
+                    </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==================== EFEITO DE TRANSIÇÃO ==================== -->
+
+    <div class="clarao"></div>
+
+
+    <!-- JavaScript da página -->
+    <script src="inicial.js"></script>
+
+</body>
+
+</html>
