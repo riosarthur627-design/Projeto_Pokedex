@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS da página -->
-    <link rel="stylesheet" href="inicial.css">
+    <link rel="stylesheet" href="CSS/inicial.css">
 </head>
 
 <body>
@@ -96,69 +96,33 @@
 
                     <!-- ==================== LOGIN ==================== -->
 
+                    <!-- ==================== LOGIN ==================== -->
                     <form class="form-login">
 
                         <div class="titulo-formulario">
-
                             <span>BEM-VINDO DE VOLTA</span>
-
                             <h2>Entre na sua conta</h2>
-
-                            <p>Acesse sua Pokédex e continue sua jornada.</p>
-
+                            <p>Digite seu nome de usuário para continuar sua jornada.</p>
                         </div>
 
-
-                        <!-- E-mail -->
+                        <!-- Nome de usuário -->
                         <div class="grupo-input">
-
-                            <label for="email-login">E-mail</label>
+                            <label for="username-login">Nome de usuário</label>
 
                             <div class="input-container">
-
-                                <i class="fa-solid fa-envelope"></i>
-
-                                <input type="email" id="email-login" placeholder="Digite seu e-mail">
-
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="username-login" placeholder="Digite seu username" required>
                             </div>
-
                         </div>
 
-
-                        <!-- Senha -->
-                        <div class="grupo-input">
-
-                            <label for="senha-login">Senha</label>
-
-                            <div class="input-container">
-
-                                <i class="fa-solid fa-lock"></i>
-
-                                <input type="password" id="senha-login" placeholder="Digite sua senha">
-
-                                <button type="button" class="mostrar-senha" aria-label="Mostrar senha">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- Mensagens de erro do login -->
+                        <!-- Mensagem de erro -->
                         <p class="erro-login"></p>
-
 
                         <!-- Botão de login -->
                         <button type="submit" class="botao-conta entrar-conta">
-
                             ENTRAR
-
                             <i class="fa-solid fa-arrow-right"></i>
-
                         </button>
-
 
                         <!-- Link para cadastro -->
                         <p class="trocar-conta">
@@ -171,115 +135,62 @@
 
 
                     <!-- ==================== CADASTRO ==================== -->
-
                     <form class="form-cadastro">
 
                         <div class="titulo-formulario">
-
                             <span>COMECE SUA JORNADA</span>
-
                             <h2>Crie sua conta</h2>
-
-                            <p>Cadastre-se para salvar seus Pokémon favoritos.</p>
-
+                            <p>Cadastre-se para começar sua jornada Pokémon.</p>
                         </div>
 
-
-                        <!-- Nome do usuário -->
+                        <!-- Nome -->
                         <div class="grupo-input">
-
-                            <label for="nome">Nome de usuário</label>
+                            <label for="nome">Nome</label>
 
                             <div class="input-container">
-
                                 <i class="fa-solid fa-user"></i>
-
-                                <input type="text" id="nome" placeholder="Digite seu nome" minlength="3" maxlength="30" required>
-
+                                <input type="text" id="nome" placeholder="Digite seu nome" required>
                             </div>
-
                         </div>
 
-
-                        <!-- E-mail -->
+                        <!-- Sobrenome -->
                         <div class="grupo-input">
-
-                            <label for="email-cadastro">E-mail</label>
+                            <label for="sobrenome">Sobrenome</label>
 
                             <div class="input-container">
-
-                                <i class="fa-solid fa-envelope"></i>
-
-                                <input type="email" id="email-cadastro" placeholder="Digite seu e-mail" required>
-
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
                             </div>
-
                         </div>
 
-
-                        <!-- Senha -->
+                        <!-- Username -->
                         <div class="grupo-input">
-
-                            <label for="senha-cadastro">Senha</label>
+                            <label for="username-cadastro">Nome de usuário</label>
 
                             <div class="input-container">
-
-                                <i class="fa-solid fa-lock"></i>
-
-                                <input type="password" id="senha-cadastro" placeholder="Digite sua senha" minlength="6" required>
-
-                                <button type="button" class="mostrar-senha" aria-label="Mostrar senha">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
-
+                                <i class="fa-solid fa-at"></i>
+                                <input type="text" id="username-cadastro" placeholder="Crie seu username" required>
                             </div>
-
                         </div>
 
-
-                        <!-- Confirmação da senha -->
+                        <!-- Data de nascimento -->
                         <div class="grupo-input">
-
-                            <label for="confirmar-senha">Confirmar senha</label>
+                            <label for="data-nascimento">Data de nascimento</label>
 
                             <div class="input-container">
-
-                                <i class="fa-solid fa-lock"></i>
-
-                                <input type="password" id="confirmar-senha" placeholder="Digite sua senha novamente" minlength="6" required>
-
-                                <button type="button" class="mostrar-senha" aria-label="Mostrar senha">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
-
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="date" id="data-nascimento" required>
                             </div>
-
                         </div>
 
-
-                        <!-- Aceitação dos termos -->
-                        <div class="termos">
-
-                            <input type="checkbox" id="aceitar-termos">
-
-                            <label for="aceitar-termos">Concordo com os termos de uso.</label>
-
-                        </div>
-
-
-                        <!-- Mensagens de erro do cadastro -->
+                        <!-- Mensagem de erro -->
                         <p class="erro-cadastro"></p>
-
 
                         <!-- Botão de cadastro -->
                         <button type="submit" class="botao-conta criar-conta">
-
                             CRIAR CONTA
-
                             <i class="fa-solid fa-arrow-right"></i>
-
                         </button>
-
 
                         <!-- Link para login -->
                         <p class="trocar-conta">
@@ -288,10 +199,7 @@
                         </p>
 
                     </form>
-
                 </div>
-
-
 
                 <!-- ==================== AUTENTICAÇÃO CONCLUÍDA ==================== -->
 
@@ -324,8 +232,6 @@
 
                     </div>
 
-                </div>
-
             </section>
 
         </div>
@@ -340,7 +246,7 @@
 
 
     <!-- JavaScript da página -->
-    <script src="inicial.js"></script>
+    <script src="JS/inicial.js"></script>
 
 </body>
 
